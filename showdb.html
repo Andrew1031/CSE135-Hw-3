@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Diagnostics</title>
+    <!-- <link rel="stylesheet" href="/styles/main.css"/>
+    <script src="reporter.js"></script> -->
+</head>
+<body>
+<header>
+<h1 class="title">Diagnostics</h1> 
+</header>
+
+<!-- Displays the data in an organized way-->
+
+<!-- Data for a user cookie, which contains session cookie(s), which then contains some static data,
+performance data, and dynamic data -->
+
+<script>
+var text ="";
+var i;
+var j;
+var count1 = 0;
+
+//loop for the number of user cookies
+var unorderedList = document.createElement("UL"); 
+unorderedList.setAttribute("class", "unorderedClass");
+document.body.appendChild(unorderedList);
+
+for (i = 0; i < 2; i++)
+{
+    var userCookiesTag = document.createElement("LI");
+    var userCookiesText = document.createTextNode("User cookie " + (i + 1) + ":");
+    userCookiesTag.appendChild(userCookiesText);
+    userCookiesTag.setAttribute("class", "userCookiesClass");
+    document.body.appendChild(userCookiesTag);
+    document.getElementsByClassName("userCookiesClass")[i].style.fontSize = "30px";
+    document.getElementsByClassName("userCookiesClass")[i].style.marginLeft = "10px";
+    document.getElementsByClassName("userCookiesClass")[i].style.fontWeight = "bold";
+    document.getElementsByClassName("unorderedClass")[0].appendChild(userCookiesTag);
+    //loop for the number of session cookies
+    for (j = 0; j < 3; j++)
+    {
+        //create session cookie tags
+        var sessionCookiesTag = document.createElement("LI");
+        var sessionCookiesText = document.createTextNode("Session cookie " + (j + 1) + ":");
+        sessionCookiesTag.appendChild(sessionCookiesText);
+        sessionCookiesTag.setAttribute("class", "sessionCookiesClass");
+        document.body.appendChild(sessionCookiesTag);
+        var sessionSize = document.getElementsByClassName("sessionCookiesClass").length - 1;
+        document.getElementsByClassName("sessionCookiesClass")[sessionSize].style.fontSize = "20px";
+        document.getElementsByClassName("sessionCookiesClass")[sessionSize].style.marginLeft = "70px";
+        document.getElementsByClassName("unorderedClass")[0].appendChild(sessionCookiesTag);
+
+        //create static data tags and buttons
+        var staticDataTag = document.createElement("LI");
+        var staticDataText = document.createTextNode("Static Data: ");
+        staticDataTag.appendChild(staticDataText);
+        staticDataTag.setAttribute("class", "staticDataClass");
+        document.body.appendChild(staticDataTag);
+
+        var staticButton = document.createElement("BUTTON");
+        var staticButtonText = document.createTextNode("Show static data");
+        staticButton.appendChild(staticButtonText);
+        staticButton.setAttribute("class", "staticButtonClass");
+        //staticButton.setAttribute("ID", i, j)
+        document.body.appendChild(staticButton);
+        staticButton.onclick = 
+        function showStaticData()
+        {
+            console.log("Static at " + j);
+        };
+
+        var staticSize = document.getElementsByClassName("staticDataClass").length - 1;
+        document.getElementsByClassName("staticDataClass")[staticSize].style.fontSize = "15px";
+        document.getElementsByClassName("staticDataClass")[staticSize].style.marginLeft = "150px";
+        document.getElementsByClassName("unorderedClass")[0].appendChild(staticDataTag);
+        document.getElementsByClassName("staticDataClass")[staticSize].appendChild(staticButton);
+        
+        //create performance data tags and buttons
+        var performanceDataTag = document.createElement("LI");
+        var performanceDataText = document.createTextNode("Performance Data: ");
+        performanceDataTag.appendChild(performanceDataText);
+        performanceDataTag.setAttribute("class", "performanceDataClass");
+        document.body.appendChild(performanceDataTag);
+
+        var performanceButton = document.createElement("BUTTON");
+        var performanceButtonText = document.createTextNode("Show performance data");
+        performanceButton.appendChild(performanceButtonText);
+        performanceButton.setAttribute("class", "performanceButtonClass");
+        document.body.appendChild(performanceButton);
+        performanceButton.onclick = 
+        function showPerformanceData()
+        {
+            console.log("Performance at " + j);
+        };
+
+        var performanceSize = document.getElementsByClassName("performanceDataClass").length - 1;
+        document.getElementsByClassName("performanceDataClass")[performanceSize].style.fontSize = "15px";
+        document.getElementsByClassName("performanceDataClass")[performanceSize].style.marginLeft = "150px";
+        document.getElementsByClassName("unorderedClass")[0].appendChild(performanceDataTag);
+        document.getElementsByClassName("performanceDataClass")[performanceSize].appendChild(performanceButton);
+
+        //create dynamic data tags and buttons
+        var dynamicDataTag = document.createElement("LI");
+        var dynamicDataText = document.createTextNode("Dynamic Data: ");
+        dynamicDataTag.appendChild(dynamicDataText);
+        dynamicDataTag.setAttribute("class", "dynamicDataClass");
+        document.body.appendChild(dynamicDataTag);
+
+        var dynamicButton = document.createElement("BUTTON");
+        var dynamicButtonText = document.createTextNode("Show dynamic data");
+        dynamicButton.appendChild(dynamicButtonText);
+        dynamicButton.setAttribute("class", "dynamicButtonClass");
+        document.body.appendChild(dynamicButton);
+        dynamicButton.onclick = 
+        function showDynamicData()
+        {
+            console.log("Dynamic at " + j);
+        };
+
+        var dynamicSize = document.getElementsByClassName("dynamicDataClass").length - 1;
+        document.getElementsByClassName("dynamicDataClass")[dynamicSize].style.fontSize = "15px";
+        document.getElementsByClassName("dynamicDataClass")[dynamicSize].style.marginLeft = "150px";
+        document.getElementsByClassName("unorderedClass")[0].appendChild(dynamicDataTag);
+        document.getElementsByClassName("dynamicDataClass")[dynamicSize].appendChild(dynamicButton);
+    }
+}
+</script>
+
+
+<!-- Need to loop this code using javascript 
+<hr>
+<ul>
+<li style="font-style: italic; font-weight: bold;">User-cookie 1:</li>
+    <li style="margin-left: 40px;">Session cookie 1: <button>aaa</button></li>
+    <li style="margin-left: 80px;">Static Data: </li>
+    <li style="margin-left: 80px;">Performance Data: </li>
+    <li style="margin-left: 80px;">Dynamic Data: </li>
+
+    <li style="margin-left: 40px;">Session cookie 2: </li>
+    <li style="margin-left: 80px;">Static Data: </li>
+    <li style="margin-left: 80px;">Performance Data: </li>
+    <li style="margin-left: 80px;">Dynamic Data: </li>
+
+    <li style="margin-left: 40px;">Session cookie 3: </li>
+    <li style="margin-left: 80px;">Static Data: </li>
+    <li style="margin-left: 80px;">Performance Data: </li>
+    <li style="margin-left: 80px;">Dynamic Data: </li>
+</ul>
+-->
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
+<script src="tracker.js"></script>
+<!-- <script src="http://analytics.example.web.app/tracker.js"></script> -->
+
+</body>
+</html>

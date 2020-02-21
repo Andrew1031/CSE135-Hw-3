@@ -1,0 +1,111 @@
+body {
+    background-image: url("/images/simple.png");
+}
+
+
+
+.title {
+    font-size:50px;
+    font-weight:900;
+    font-variant:small-caps;
+    font-style:italic;
+    font-family: "Arial";
+    line-height: 50px;
+    background-color: red;
+    text-align: center;
+}
+
+
+#indexLink {
+    font-size: 30px;
+    float:left;
+}
+
+#imagesLink {
+    font-size: 30px;
+    float: left;
+}
+
+#formLink {
+    font-size: 30px;
+    float: left;
+}
+
+#table_and_listsLink {
+    font-size: 30px;
+    float:left;
+}
+
+#externalsLink {
+    font-size:30px;
+    float:left;
+}
+
+.noWhiteSpace {
+    font-size:30px;
+    white-space: nowrap;
+    float: left;
+}
+
+.topic {
+    font-size:35px;
+    text-decoration: underline;
+    font-style: italic;
+    font-family: "Times New Roman";
+    color:darkred;
+    text-align: center;
+}
+
+.grid {
+    display:grid;
+    margin-top:50px;
+    margin-left:310px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    background-color:yellowgreen;
+    margin-right:240px;
+    vertical-align: text-bottom;
+}
+
+div.category {
+    border: 5px solid black;
+    padding:50px;
+    text-align:center;
+}
+
+caption {
+    font-size:35px;
+    text-decoration: underline;
+    font-style: italic;
+    font-family: "Times New Roman";
+    color:darkred;
+    text-align: center;
+}
+
+table, th, tr, td {
+    border: 1.75px solid black;
+}
+
+.sleep {
+    background-color: yellow;
+}
+
+.free {
+    background-color:blue;
+}
+
+.routine {
+    background-color:orange;
+}
+
+.class {
+    background-color:red;
+}
+
+.work {
+    background-color:plum;
+}
+
+.misc {
+    background-color:cyan;
+}
